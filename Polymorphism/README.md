@@ -1,37 +1,45 @@
-## Create a small game of <i>TicTacToe</i>:
+## Try the following: 
 
-Implement a basic game of <i>TicTacToe</i> using a console application. The playing field is represented by a two-dimensional array. The players can, in turns, input the position (row & column) for movement. The corresponding symbol is then put into the array. In every round the game checks if a player has won the game.
-
-<b>1.</b> Create a <b>3x3</b> <i>char</i> array <br>
-<b>2.</b> Write a function which fills the array with empty symbols. The function signature looks as follows:
+<b>1.</b> Create a <i>Player</i> class and the inheriting classes <i>Orc</i>, <i>Elf</i> and <i>Human</i> <br>
+<b>2.</b> Make sure the <i>Player</i> class has following member variables:
 
 ```cpp
-void GenerateMap();
+m_health
+m_attackPower
 ```
 
-<b>3.</b> Write a function called <i>ShowMap()</i> which displays the playing field within the console application:
+<b>3.</b> Make sure that <i>m_attackPower</i> is only visible for the <i>Player</i> class and inheriting classes. The variable <i>m_health</i> should be visible to any other class.
+
+<b>4.</b> Add the following default values to the classes:
+
+<b>Orcs</b>: <b>120</b> health, <b>10</b> attackPower <br>
+<b>Humans</b>: <b>90</b> health, <b>10</b> attackPower <br>
+<b>Elves</b>: <b>60</b> health, <b>15</b> attackpower	<br>
+
+<b>5.</b> The <i>Player</i> class should contain an overwritable function called <i>Attack()</i> that will reduce the health value of other player by the attack power of the attacking Player. The function should looks like this:
 
 ```cpp
-void ShowMap();
+void Attack(const Player& otherPlayer);
 ```
 
-<b>4.</b> Create three <i>char</i> variables, namely <i>player1 = 'X'</i>, <i>player2 = 'O'</i> and <i>currentPlayer</i> <br>
-<b>5.</b> Create a <i>bool</i> variable <i>isPlayer1Active</i> which is used to distinguish which player's turn it is. <br>
-<b>6.</b> Write a function called <i>SetNewPosition()</i> which asks the player for the <i>row</i> and <i>column</i> into which to insert their symbol. Assign those values to the corresponding variables:
+<b>6.</b> Implement the following additional features within the inheriting classes:
+
+<b>a.</b> Orcs have a <b>20%</b> chance of missing an attack. <br>
+<b>b.</b> Orcs have a <b>30%</b> chance of doing double damage, which also damages the attacking orc by his own attack power. <br>
+<b>c.</b> Humans have a <b>50%</b> chance of doing <b>50%</b> additional damage. <br>
+<b>d.</b> Elves have a <b>30%</b> chance of doing five points less damage and healing them by ten points (Consider maximum health levels). <br>
+
+<b>7.</b> When the game starts, the player can choose a race. After that, the battle starts automatically and lasts until one player is dead. The main game loop could look something like this:
 
 ```cpp
-void SetNewPosition();
+while(m_health > 0)
+{
+    //play the game...
+}
 ```
 
-<b>7.</b> Write the symbol to the correct position within the array. <br>
-<b>8.</b> Write a function called <i>CheckWin()</i> which checks if the current player has won the game. <br>
-<b>9.</b> Write a function called <i>PlayGame()</i> which internally invokes <i>ShowMap()</i> and <i>SetNewPosition()</i>. <br>
-<b>10.</b> Make sure to call <i>GenerateMap()</i> and <i>PlayGame()</i> in <i>main.cpp</i>. <br>
+<b>8.</b> Implement suitable console input and output for the game. <br>
 
 ### Bonus <br>
-Make sure players can only put symbols on empty spaces. Implement some sort of score for each player, which is shown at the end of a game. Winning a game earns you one point.  
 
-### Hints
-<b>1.</b> Use <b>'\n'</b> for new lines. <br>
-<b>2.</b> Use nested loops for the array. <br>
-<b>3.</b> Make sure to clear the console screen in <i>ShowMap()</i> so that the map is always at the top. <br>
+Think of suitable additions to the game (e.g., potions of new races) and implement one of those additions.
