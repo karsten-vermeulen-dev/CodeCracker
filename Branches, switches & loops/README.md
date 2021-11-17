@@ -1,31 +1,59 @@
-## Use functions to create the following:
+## Rewrite the following:
 
-<b>1.</b> Write a <i>Stars()</i> function which prints out a line of stars. Use a loop within the function if you know how. The number of stars in the line is given as a parameter. So, your function signature is: <br>
+<b>1.</b> Rewrite this <i>switch statement</i> as an <i>if/else statement</i> and, if you can, use enumerated values to replace the magic numbers:
 
 ```cpp
-void Stars(int numStars);
+int num = 1;
+
+switch (num)
+{
+	case 0:
+		std::cout << "0" << std::endl;
+		break;
+	case 1:
+		std::cout << "1" << std::endl;
+		break;
+	case 2:
+		std::cout << "2" << std::endl;
+}
 ```
 
-<b>2.</b> Write a <i>Rectangle()</i> function, which draws a rectangle of stars. Use a loop here too, if you can. This function should take two parameters, one for width, and one for height. <br>
+<b>2.</b> Rewrite this <i>if-statement</i> as a <i>switch statement</i> and remove the magic numbers in place of enumerations:
+		
+```cpp    
+int age = 33;
 
-```cpp
-void Rectangle(int width, int height);
+if (age == 24)
+{
+	std::cout << "You are still very young!" << std::endl;
+}
+else if (age == 55)
+{
+	std::cout << "You are getting on in life" << std::endl;
+}
+else
+{
+	std::cout << "You are what you are..." << std::endl;
+}
 ```
 
-<b>3.</b> Write a <i>HollowRect()</i> function, which only draws the rectangle outline. Do this iteratively.
-
-```cpp
-void HollowRect(int width, int height);
+<b>3.</b> Rewrite this <i>for-loop</i> as a <i>while-loop</i>:
+	
+```cpp  
+for (int i = 0; i < 10; i++)
+{
+	//insert your own action here...
+}
 ```
 
-<b>4.</b> Write a <i>Triangle()</i> function that displays rows of stars, each row larger than the previous. Make sure the parameter passed reflects the maximum amount of rows required.
+<b>4.</b> Rewrite this <i>do-while</i> as a <i>for-loop</i>:
 
 ```cpp
-void Triangle(int maxRows);
-```
-
-<b>5.</b> Write a <i>Diamond()</i> function, which renders rows of stars, each row larger than the previous. After the largest row has been rendered, draw smaller rows again. Pass in a parameter that determines how large the longest row should be.
-
-```cpp
-void Diamond(int maxRows);
+int i = 0;
+	
+do
+{
+	//insert your own action here...
+	++i;
+} while (i < 25); 
 ```
